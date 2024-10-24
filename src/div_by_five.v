@@ -15,6 +15,9 @@ module div_by_five #(
 );
 
     // 4-bit serializer
+    always_ff @( posedge clk ) begin
+    
+    end
 
     // Sequential addition logic
     // sum the output of the 
@@ -23,7 +26,8 @@ module div_by_five #(
     wire [3:0] four_bit_sum;
 
     // 4-bit div by 5 logic
-    assign divisible = ~(four_bit_sum[3] ^ four_bit_sum[1]) & ~(four_bit_sum[2] ^ four_bit_sum[0]);
+    assign divisible = ~(four_bit_sum[3] ^ four_bit_sum[1]) & 
+                       ~(four_bit_sum[2] ^ four_bit_sum[0]);
 
 endmodule
 
