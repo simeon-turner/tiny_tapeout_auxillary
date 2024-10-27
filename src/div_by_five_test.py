@@ -25,20 +25,20 @@ def test_div_by_five_runner():
   """
   Runner for all test for our divisible by five detector
   """
-  sim = os.getenv("SIM", "icarus")
+  sim = os.getenv("SIM", "verilator")
 
   proj_path = Path(__file__).resolve().parent
 
-  sources = [proj_path / src / "div_by_five.v"]
+  sources = [proj_path / "adder.v"]
 
   runner = get_runner(sim)
   runner.build(
-    sources=sources,
-    hdl_toplevel="div_by_five",
+    verilog_sources=sources,
+    hdl_toplevel="adder",
   )
 
   runner.test(
-    hdl_toplevel="div_by_five", 
+    hdl_toplevel="adder", 
     test_module="div_by_five_test,"
   )
 
