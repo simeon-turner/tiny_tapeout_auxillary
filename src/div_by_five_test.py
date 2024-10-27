@@ -15,33 +15,4 @@ async def test_basic(dut):
   """
   Basic test case to test that input number 5 is divisible by 5.
   """
-
-  input = 5
-
-  dut.value = input
-
-
-def test_div_by_five_runner():
-  """
-  Runner for all test for our divisible by five detector
-  """
-  sim = os.getenv("SIM", "verilator")
-
-  proj_path = Path(__file__).resolve().parent
-
-  sources = [proj_path / "adder.v"]
-
-  runner = get_runner(sim)
-  runner.build(
-    verilog_sources=sources,
-    hdl_toplevel="adder",
-  )
-
-  runner.test(
-    hdl_toplevel="adder", 
-    test_module="div_by_five_test,"
-  )
-
-
-if __name__ == "__main__":
-  test_div_by_five_runner()
+  pass

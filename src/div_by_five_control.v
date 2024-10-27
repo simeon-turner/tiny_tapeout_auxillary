@@ -8,7 +8,7 @@ module control_div_by_five (
   output logic acc_sel,
   output logic c_sel,
   output logic in_rdy,
-  output logic out_val,
+  output logic out_val
 );
   logic [1:0] state;
   logic [1:0] next_state;
