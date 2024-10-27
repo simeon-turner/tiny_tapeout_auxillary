@@ -1,14 +1,11 @@
-module adder #(
-  BIT_WIDTH = 4
+module Adder_Nb #(
+  parameter BIT_WIDTH = 32
 ) (
-  input logic [BIT_WIDTH-1:0] in0,
-  input logic [BIT_WIDTH-1:0] in1,
-  output logic [BIT_WIDTH-1:0] out
+  input  logic [BIT_WIDTH - 1:0] in0,
+  input  logic [BIT_WIDTH - 1:0] in1,
+  input  logic cin,
+  output logic [BIT_WIDTH - 1:0] out,
+  output logic  cout
 );
-
-  always_comb begin
-    out = in0 + in1;
-  end
-  
+  assign {cout, out} = in0 + in1 + cin;
 endmodule
-
